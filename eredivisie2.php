@@ -17,86 +17,41 @@ $twente = array (
     "groningen" => array (13, "FC Groningen", "Groningen", 26, 5, 11, 10, -5),
     "nac" => array (14, "NAC Breda", "Breda", 26, 6, 6, 14, -15),
     "willem" => array (15, "Willem 2", "Tilburg", 26, 6, 5, 15, -16),
-    "roda" => array (18, "Roda JC", "Kerkrade", 26, 4, 5, 17, -31),
-    16,
-    "FC Twente",
-    "Enschede",
-    26,
-    4,
-    6,
-    16,
-    -19
+    "twente" => array (16, "FC Twente", "Enschede", 26, 4, 6, 16, -19),
+    "roda" => array (18, "Roda JC", "Kerkrade", 26, 4, 5, 17, -31)
 );
 
-$psv = $twente["psv"];
-$ajax = $twente["ajax"];
-$az = $twente["az"];
-$utrecht = $twente["utrecht"];
-$feyenoord = $twente["feyenoord"];
-$vitesse = $twente["vitesse"];
-$zwolle = $twente["zwolle"];
-$ado = $twente["denhaag"];
-$heerenveen = $twente["heerenveen"];
-$vvv = $twente["vvv"];
-$heracles = $twente["heracles"];
-$excelsior = $twente["excelsior"];
-$groningen = $twente["groningen"];
-$nac = $twente["nac"];
-$willem = $twente["willem"];
-$sparta = $twente["sparta"];
-$roda = $twente["roda"];
-
+$samenvoegen = array($twente["psv"], $twente["ajax"], $twente["az"], $twente["utrecht"], $twente["feyenoord"], $twente["vitesse"],
+    $twente["zwolle"], $twente["denhaag"], $twente["heerenveen"], $twente["vvv"], $twente["heracles"], $twente["excelsior"], $twente["groningen"],
+    $twente["nac"], $twente["willem"], $twente["twente"], $twente["sparta"], $twente["roda"]
+    );
 
 
 echo <<<TEXT
 <table border="1px solid black">
     <tr>
-        <th>Clubnaam</th>
         <th>Positie</th>
+        <th>Clubnaam</th>
+        <th>Woonplaats</th>
+        <th>Aantal gespeelde wedstrijden</th>
         <th>Aantal gewonnen wedstrijden</th>
         <th>Aantal gelijk gespeelde wedstrijden</th>
         <th>Aantal verloren wedstrijden</th>
         <th>Doelsaldo</th>
     </tr>
-    <tr>
-        <td>$psv[1]</td>
-    </tr>
-
-</table>
 TEXT;
 
+$teller = 0;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-echo <<<Tekst
-<h1>$twente[1]</h1><br>
-Stad van de club: $twente[2]<br>
-positie in eredivisie: $twente[0]<br>
-Aantal gespeelde wedstrijden: $twente[3]<br>
-Aantal gewonnen wedstrijden: $twente[4]<br>
-Aantal gelijk gespeelde wedstrijden: $twente[5]<br>
-Aantal verloren wedstrijden: $twente[6]<br>
-<br>
-<br>
-<h1>$Heracles[1]</h1><br>
-Stad van de club: $Heracles[2]<br>
-positie in eredivisie: $Heracles[0]<br>
-Aantal gespeelde wedstrijden: $Heracles[3]<br>
-Aantal gewonnen wedstrijden: $Heracles[4]<br>
-Aantal gelijk gespeelde wedstrijden: $Heracles[5]<br>
-Aantal verloren wedstrijden: $Heracles[6]<br>
-Tekst;
+foreach ($samenvoegen as $value){
+    foreach ($value as $waarde){
+        $teller++;
+        if($teller == 9){
+            echo "<tr> <td> $waarde </td>";
+            $teller = 1;
+        }
+        else
+        echo "<td> $waarde </td>";
+    }
+}
+echo "</table>";
