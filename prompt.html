@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <title>Promt</title>
+</head>
+<body>
+
+<script>
+    var voornaam = prompt("Wat is je voornaam?", "voornaam hier invullen");
+
+    if (voornaam != null) {
+            document.write(
+            "Uw voornaam is: " + voornaam + "<br>");
+    }
+    var achternaam = prompt("Wat is je achternaam?", "achternaam hier invullen");
+
+    if (achternaam != null) {
+        document.write(
+            "Uw achternaam is: " + achternaam + "<br>");
+    }
+    var leeftijd = prompt("Wat is je leeftijd?", "leeftijd hier invullen");
+
+    if (leeftijd != null) {
+        document.write(
+            "Uw leeftijd is: " + leeftijd + "<br>" + "Welkom op mijn website " + voornaam + " " + achternaam  + " , " + "u bent " + leeftijd + " jaar oud!"
+        );
+    }
+    </script>
+</body>
+</html>
